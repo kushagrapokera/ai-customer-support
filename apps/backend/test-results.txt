@@ -1,0 +1,199 @@
+================================================================================
+PHASE 4 MULTI-AGENT SYSTEM TEST RESULTS
+================================================================================
+Test Date: 16/1/2026, 10:53:17 pm
+Total Test Cases: 8
+================================================================================
+
+Initializing semantic router...
+Semantic router initialized successfully
+
+================================================================================
+TEST EXECUTION
+================================================================================
+
+
+================================================================================
+TEST 1/8
+================================================================================
+Query: "Where is my package?"
+
+ROUTING RESULT:
+  Agent Selected: ORDER
+  Routing Method: semantic
+  Confidence Score: 1.000
+
+AGENT RESPONSE:
+  Your package has been delivered. The order number is ORD-2026-001, and the tracking number is TRK123456789. If you have any further questions or concerns, please let me know.
+
+Execution Time: 1004ms
+Status: PASS
+--------------------------------------------------------------------------------
+
+
+================================================================================
+TEST 2/8
+================================================================================
+Query: "I need a refund for my recent purchase"
+
+ROUTING RESULT:
+  Agent Selected: BILLING
+  Routing Method: semantic
+  Confidence Score: 0.838
+
+AGENT RESPONSE:
+  I apologize for the inconvenience, but it seems that the invoice number provided does not exist in our system. Could you please provide me with the correct invoice number or more details about your recent purchase so I can assist you further with your refund request?
+
+Execution Time: 932ms
+Status: PASS
+--------------------------------------------------------------------------------
+
+
+================================================================================
+TEST 3/8
+================================================================================
+Query: "How do I reset my password?"
+
+ROUTING RESULT:
+  Agent Selected: SUPPORT
+  Routing Method: semantic
+  Confidence Score: 1.000
+
+AGENT RESPONSE:
+  To reset your password, go to the login page and click "Forgot Password". Then, enter your email address and follow the instructions sent to your inbox. If you have any further issues, feel free to ask.
+
+Execution Time: 981ms
+Status: PASS
+--------------------------------------------------------------------------------
+
+
+================================================================================
+TEST 4/8
+================================================================================
+Query: "Help me cancel my order ORD-2026-001"
+
+ROUTING RESULT:
+  Agent Selected: ORDER
+  Routing Method: semantic
+  Confidence Score: 0.802
+
+AGENT RESPONSE:
+  I've checked on the status of your order ORD-2026-001. Unfortunately, it's already been delivered, so I won't be able to cancel it. If you'd like to return the item, I can provide you with return instructions. Would you like that?
+
+Execution Time: 933ms
+Status: PASS
+--------------------------------------------------------------------------------
+
+
+================================================================================
+TEST 5/8
+================================================================================
+Query: "My payment was declined"
+
+ROUTING RESULT:
+  Agent Selected: BILLING
+  Routing Method: semantic
+  Confidence Score: 0.683
+
+AGENT RESPONSE:
+  I apologize for the issue with your payment being declined. Unfortunately, I was unable to retrieve your invoice details as the invoice number "INV-2026-001" was not found. Can you please provide me with your actual invoice number or more information about your payment so I can better assist you?
+
+Execution Time: 1090ms
+Status: PASS
+--------------------------------------------------------------------------------
+
+
+================================================================================
+TEST 6/8
+================================================================================
+Query: "Track order number ORD-2026-002"
+
+ROUTING RESULT:
+  Agent Selected: ORDER
+  Routing Method: llm
+  Confidence Score: 1.000
+  Reasoning: The user explicitly mentions 'track order number', which is a clear indication that they need assistance with order tracking, a task specifically handled by the ORDER agent.
+
+AGENT RESPONSE:
+  Your order ORD-2026-002 has been shipped and is on its way to you. The estimated delivery date is January 18, 2026. You can track your order using the tracking number TRK987654321. If you have any further questions or concerns, please don't hesitate to reach out.
+
+Execution Time: 1228ms
+Status: PASS
+--------------------------------------------------------------------------------
+
+
+================================================================================
+TEST 7/8
+================================================================================
+Query: "Can you help me with installation steps?"
+
+ROUTING RESULT:
+  Agent Selected: SUPPORT
+  Routing Method: llm
+  Confidence Score: 0.900
+  Reasoning: The user is asking for help with installation steps, which falls under the category of setup help and technical problems, making the SUPPORT agent the most suitable choice.
+
+AGENT RESPONSE:
+  I apologize, but I'm having trouble accessing support resources right now. Please try again or describe your issue in more detail.
+
+Execution Time: 834ms
+Status: PASS
+--------------------------------------------------------------------------------
+
+
+================================================================================
+TEST 8/8
+================================================================================
+Query: "I didn't receive my invoice INV-ORD-2026-001"
+
+ROUTING RESULT:
+  Agent Selected: BILLING
+  Routing Method: semantic
+  Confidence Score: 0.797
+
+AGENT RESPONSE:
+  I've retrieved the details of your invoice INV-ORD-2026-001. The invoice was issued on January 16, 2026, and the due date is February 15, 2026. The total amount due is $1533.99. If you have any questions or concerns about this invoice, please let me know and I'll be happy to help.
+
+Execution Time: 796ms
+Status: PASS
+--------------------------------------------------------------------------------
+
+
+================================================================================
+TEST SUMMARY
+================================================================================
+Total Tests: 8
+Passed: 8
+Failed: 0
+Success Rate: 100.0%
+Total Execution Time: 21.30s
+================================================================================
+
+DETAILED BREAKDOWN BY AGENT:
+--------------------------------------------------------------------------------
+
+SUPPORT Agent:
+  Total Queries: 2
+  Success: 2/2
+  Average Confidence: 0.950
+
+ORDER Agent:
+  Total Queries: 3
+  Success: 3/3
+  Average Confidence: 0.934
+
+BILLING Agent:
+  Total Queries: 3
+  Success: 3/3
+  Average Confidence: 0.773
+
+--------------------------------------------------------------------------------
+
+ROUTING METHOD BREAKDOWN:
+--------------------------------------------------------------------------------
+Semantic Routing: 6 queries (75.0%)
+LLM Routing: 2 queries (25.0%)
+
+================================================================================
+END OF TEST REPORT
+================================================================================
