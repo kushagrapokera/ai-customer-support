@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Recurse -File -Name)",
+      "Bash(Select-Object -First 100)",
+      "PowerShell(Get-ChildItem -Recurse -File -Name | Where-Object { $_ -notmatch 'node_modules' -and $_ -notmatch '\\\\.turbo' -and $_ -notmatch '\\\\.git' })"
+    ]
+  }
+}

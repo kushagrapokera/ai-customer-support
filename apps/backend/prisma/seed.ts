@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function main() {
-  console.log('🌱 Seeding database...')
+  console.log('Seeding database...')
 
   // Create test user
   const user = await prisma.user.upsert({
@@ -15,7 +15,7 @@ async function main() {
     },
   })
 
-  console.log('✅ Created user:', user.email)
+  console.log('Created user:', user.email)
 
   // Create sample orders
   const orders = await Promise.all([
@@ -62,7 +62,7 @@ async function main() {
     }),
   ])
 
-  console.log(`✅ Created ${orders.length} orders`)
+  console.log(`Created ${orders.length} orders`)
 
   // Create payments for orders
   for (const order of orders) {
@@ -90,7 +90,7 @@ async function main() {
     })
   }
 
-  console.log('✅ Created payments and invoices')
+  console.log('Created payments and invoices')
 
   // Create FAQs
   const faqs = await Promise.all([
@@ -128,14 +128,14 @@ async function main() {
     }),
   ])
 
-  console.log(`✅ Created ${faqs.length} FAQs`)
+  console.log(`Created ${faqs.length} FAQs`)
 
-  console.log('🎉 Seeding completed!')
+  console.log('Seeding completed!')
 }
 
 main()
   .catch((e) => {
-    console.error('❌ Seeding failed:', e)
+    console.error('Seeding failed:', e)
     process.exit(1)
   })
   .finally(async () => {
